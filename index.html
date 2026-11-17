@@ -1,13 +1,10 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Real or AI?</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,36 +12,73 @@
 
     <main class="container">
 
-        <header>
-            <h1>REAL <span>OR</span> AI?</h1>
-            <p class="subtitle">THE ART DETECTIVE GAME</p>
-        </header>
+        <!-- TELA INICIAL -->
 
-        <section class="welcome">
+        <section id="home-screen">
 
-            <p class="tag">DESAFIE SEU OLHAR</p>
+            <header>
+                <h1>REAL <span>OR</span> AI?</h1>
+                <p class="subtitle">THE ART DETECTIVE GAME</p>
+            </header>
 
-            <h2>Você consegue distinguir
-                <span>arte real de inteligência artificial?</span>
-            </h2>
+            <div class="welcome">
+                <p class="tag">DESAFIE SEU OLHAR</p>
 
-            <p class="description">
-                Quatro pinturas. Apenas uma é verdadeira.
-                Três foram criadas por inteligência artificial.
-                Será que você consegue descobrir?
-            </p>
+                <h2>
+                    Você consegue distinguir
+                    <span>arte real de inteligência artificial?</span>
+                </h2>
 
-            <button id="start-button">
-                COMEÇAR JOGO
-            </button>
+                <p class="description">
+                    Quatro pinturas. Apenas uma é verdadeira.
+                    Três foram criadas por inteligência artificial.
+                    Será que você consegue descobrir?
+                </p>
 
-            <p class="note">TESTE SUA PERCEPÇÃO ARTÍSTICA</p>
+                <button id="start-button">
+                    COMEÇAR JOGO
+                </button>
+            </div>
 
         </section>
 
-        <footer>
-            © 2026 REAL OR AI? — ART DETECTIVE GAME
-        </footer>
+        <!-- TELA DO JOGO -->
+
+        <section id="game-screen" class="hidden">
+
+            <h2>Qual pintura é verdadeira?</h2>
+
+            <p class="description">
+                Escolha a obra que acredita ser original.
+            </p>
+
+            <div class="paintings">
+
+                <button class="painting" data-answer="A">
+                    <img src="https://placehold.co/400x300/333333/ffffff?text=Pintura+A" alt="Pintura A">
+                    <span>OPÇÃO A</span>
+                </button>
+
+                <button class="painting" data-answer="B">
+                    <img src="https://placehold.co/400x300/444444/ffffff?text=Pintura+B" alt="Pintura B">
+                    <span>OPÇÃO B</span>
+                </button>
+
+                <button class="painting" data-answer="C">
+                    <img src="https://placehold.co/400x300/555555/ffffff?text=Pintura+C" alt="Pintura C">
+                    <span>OPÇÃO C</span>
+                </button>
+
+                <button class="painting" data-answer="D">
+                    <img src="https://placehold.co/400x300/666666/ffffff?text=Pintura+D" alt="Pintura D">
+                    <span>OPÇÃO D</span>
+                </button>
+
+            </div>
+
+            <p id="result"></p>
+
+        </section>
 
     </main>
 
