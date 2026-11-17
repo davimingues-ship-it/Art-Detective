@@ -1,27 +1,30 @@
 
-console.log("Real or AI carregado!");
-
-// ELEMENTOS DA TELA
+console.log("Real or AI iniciado!");
 
 const startButton = document.getElementById("start-button");
 const homeScreen = document.getElementById("home-screen");
 const gameScreen = document.getElementById("game-screen");
 const result = document.getElementById("result");
 
-// RESPOSTA CORRETA TEMPORÁRIA
-
 const correctAnswer = "B";
 
-// BOTÃO COMEÇAR
+// GARANTIR QUE O JOGO COMECE NA TELA INICIAL
 
-if (startButton) {
-    startButton.addEventListener("click", function() {
-        homeScreen.classList.add("hidden");
-        gameScreen.classList.remove("hidden");
-    });
-}
+homeScreen.hidden = false;
+gameScreen.hidden = true;
 
-// BOTÕES DAS PINTURAS
+// ABRIR O JOGO
+
+startButton.addEventListener("click", function() {
+
+    homeScreen.hidden = true;
+    gameScreen.hidden = false;
+
+    console.log("Jogo iniciado!");
+
+});
+
+// ESCOLHER UMA PINTURA
 
 const paintings = document.querySelectorAll(".painting");
 
@@ -31,12 +34,10 @@ paintings.forEach(function(painting) {
 
         const selectedAnswer = painting.dataset.answer;
 
-        console.log("Você escolheu:", selectedAnswer);
-
         if (selectedAnswer === correctAnswer) {
             result.textContent = "PARABÉNS! VOCÊ ACERTOU!";
         } else {
-            result.textContent = "OPS! RESPOSTA ERRADA! TENTE NOVAMENTE NA PRÓXIMA RODADA.";
+            result.textContent = "OPS! RESPOSTA ERRADA!";
         }
 
         paintings.forEach(function(item) {
@@ -46,5 +47,3 @@ paintings.forEach(function(painting) {
     });
 
 });
-
-console.log("Botões das pinturas configurados!");
