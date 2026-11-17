@@ -127,6 +127,70 @@ footer {
         font-size: 14px;
     }
 
+/* ESCONDER ELEMENTOS */
+
+.hidden {
+    display: none !important;
+}
+
+/* TELA DO JOGO */
+
+#game-screen {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+#game-screen h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* QUATRO PINTURAS */
+
+.paintings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.painting {
+    background: #202020;
+    color: white;
+    border: 1px solid #c9a45c;
+    padding: 10px;
+    width: 100%;
+}
+
+.painting img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.painting span {
+    display: block;
+    margin-top: 12px;
+}
+
+.painting:hover {
+    border-color: white;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #c9a45c;
+}
+
+@media (max-width: 600px) {
+    .paintings {
+        grid-template-columns: 1fr;
+    }
+}
+
     button {
         width: 100%;
         max-width: 320px;
