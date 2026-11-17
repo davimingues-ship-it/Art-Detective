@@ -190,7 +190,16 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* CONTROLE DAS TELAS */
 
+.hidden {
+    display: none !important;
+}
+
+#home-screen,
+#game-screen {
+    width: 100%;
+}
     button {
         width: 100%;
         max-width: 320px;
