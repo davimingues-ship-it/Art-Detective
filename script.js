@@ -1,23 +1,27 @@
 
-const startButton = document.getElementById("start-button");
+console.log("Real or AI carregado!");
 
+// ELEMENTOS DA TELA
+
+const startButton = document.getElementById("start-button");
 const homeScreen = document.getElementById("home-screen");
 const gameScreen = document.getElementById("game-screen");
-
 const result = document.getElementById("result");
+
+// RESPOSTA CORRETA TEMPORÁRIA
 
 const correctAnswer = "B";
 
-// COMEÇAR JOGO
+// BOTÃO COMEÇAR
 
-startButton.addEventListener("click", function() {
+if (startButton) {
+    startButton.addEventListener("click", function() {
+        homeScreen.classList.add("hidden");
+        gameScreen.classList.remove("hidden");
+    });
+}
 
-    homeScreen.classList.add("hidden");
-    gameScreen.classList.remove("hidden");
-
-});
-
-// ESCOLHER UMA PINTURA
+// BOTÕES DAS PINTURAS
 
 const paintings = document.querySelectorAll(".painting");
 
@@ -27,14 +31,12 @@ paintings.forEach(function(painting) {
 
         const selectedAnswer = painting.dataset.answer;
 
+        console.log("Você escolheu:", selectedAnswer);
+
         if (selectedAnswer === correctAnswer) {
-
-            result.textContent = "Parabéns! Você acertou!";
-
+            result.textContent = "PARABÉNS! VOCÊ ACERTOU!";
         } else {
-
-            result.textContent = "Ops! Essa não é a pintura verdadeira.";
-
+            result.textContent = "OPS! RESPOSTA ERRADA! TENTE NOVAMENTE NA PRÓXIMA RODADA.";
         }
 
         paintings.forEach(function(item) {
@@ -44,3 +46,5 @@ paintings.forEach(function(painting) {
     });
 
 });
+
+console.log("Botões das pinturas configurados!");
