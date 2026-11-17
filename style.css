@@ -9,21 +9,20 @@
 
 body {
     background: #111111;
-    color: #ffffff;
+    color: white;
     font-family: Arial, sans-serif;
     min-height: 100vh;
 }
 
-/* CONTAINER PRINCIPAL */
-
 .container {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     padding: 40px 20px;
     text-align: center;
+}
+
+/* REGRA MAIS IMPORTANTE */
+[hidden] {
+    display: none !important;
 }
 
 /* CABEÇALHO */
@@ -31,10 +30,10 @@ body {
 header h1 {
     font-size: 42px;
     letter-spacing: 5px;
-    color: #ffffff;
 }
 
-header h1 span {
+header h1 span,
+.welcome h2 span {
     color: #c9a45c;
 }
 
@@ -45,17 +44,16 @@ header h1 span {
     margin-top: 10px;
 }
 
-/* APRESENTAÇÃO */
+/* TELA INICIAL */
 
 .welcome {
     max-width: 750px;
-    margin: 60px auto;
+    margin: 100px auto;
 }
 
 .tag {
     color: #c9a45c;
     letter-spacing: 4px;
-    font-size: 12px;
     margin-bottom: 25px;
 }
 
@@ -65,88 +63,43 @@ header h1 span {
     margin-bottom: 25px;
 }
 
-.welcome h2 span {
-    color: #c9a45c;
-}
-
 .description {
     color: #aaaaaa;
     font-size: 16px;
     line-height: 1.8;
+    margin: 20px auto 35px;
     max-width: 550px;
-    margin: 0 auto 35px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 
 button {
     background: #c9a45c;
     color: #111111;
     border: none;
-    padding: 18px 45px;
-    font-size: 14px;
+    padding: 18px 35px;
     font-weight: bold;
-    letter-spacing: 2px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button:hover {
+button:hover:not(:disabled) {
     background: #e2c17f;
-    transform: scale(1.05);
-}
-
-.note {
-    color: #777777;
-    font-size: 10px;
-    letter-spacing: 3px;
-    margin-top: 25px;
-}
-
-/* RODAPÉ */
-
-footer {
-    color: #666666;
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-/* CELULARES */
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 32px;
-    }
-
-    .container {
-        padding: 30px 18px;
-    }
-
-    .description {
-        font-size: 14px;
-    }
-
-/* ESCONDER ELEMENTOS */
-
-.hidden {
-    display: none !important;
+    transform: scale(1.03);
 }
 
 /* TELA DO JOGO */
 
 #game-screen {
-    width: 100%;
     max-width: 1000px;
     margin: 50px auto;
 }
 
 #game-screen h2 {
     font-size: 32px;
-    margin-bottom: 15px;
 }
 
-/* QUATRO PINTURAS */
+/* PINTURAS */
 
 .paintings {
     display: grid;
@@ -156,18 +109,18 @@ footer {
 }
 
 .painting {
+    width: 100%;
+    padding: 10px;
     background: #202020;
     color: white;
     border: 1px solid #c9a45c;
-    padding: 10px;
-    width: 100%;
 }
 
 .painting img {
-    width: 100%;
     display: block;
-    object-fit: cover;
+    width: 100%;
     aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
 .painting span {
@@ -175,33 +128,29 @@ footer {
     margin-top: 12px;
 }
 
-.painting:hover {
-    border-color: white;
+.painting:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 #result {
     margin-top: 30px;
-    font-size: 20px;
     color: #c9a45c;
+    font-size: 20px;
 }
+
+/* CELULAR */
 
 @media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    .welcome {
+        margin: 70px auto;
+    }
+
     .paintings {
         grid-template-columns: 1fr;
-    }
-}
-/* CONTROLE DAS TELAS */
-
-.hidden {
-    display: none !important;
-}
-
-#home-screen,
-#game-screen {
-    width: 100%;
-}
-    button {
-        width: 100%;
-        max-width: 320px;
     }
 }
