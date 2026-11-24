@@ -4,122 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real or AI? — Você consegue descobrir?</title>
+    <title>Real or AI? — O Desafio da Arte</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main class="app">
 
-    <header class="topbar">
-        <a class="logo" href="#" aria-label="Real or AI">REAL <span>OR</span> AI<span class="logo-dot">?</span></a>
-        <div class="top-label">O DESAFIO DA ARTE</div>
-    </header>
-
-    <main>
         <!-- TELA INICIAL -->
         <section id="home-screen" class="screen home-screen">
-            <div class="eyebrow"><span class="eyebrow-dot"></span> UM DESAFIO PARA SEUS OLHOS</div>
-
-            <h1>Você consegue<br>separar o <span>real</span> do<br><span class="outlined">artificial?</span></h1>
-
-            <p class="intro">
-                Quatro pinturas. Apenas uma foi criada por um artista humano.
-                As outras três foram geradas por inteligência artificial.
-                Você consegue descobrir qual é a verdadeira?
+            <p class="eyebrow">THE ART DETECTIVE GAME</p>
+            <h1>REAL <span>OR AI?</span></h1>
+            <p class="subtitle">
+                Você consegue distinguir uma obra humana de uma imagem criada por inteligência artificial?
             </p>
 
-            <button id="start-button" class="primary-button">
-                COMEÇAR JOGO <span>→</span>
-            </button>
-
-            <div class="home-details">
-                <div><strong>04</strong><span>OBRAS POR RODADA</span></div>
-                <div><strong>01</strong><span>OBRA HUMANA</span></div>
-                <div><strong>03</strong><span>OBRAS DE IA</span></div>
+            <div class="intro-panel">
+                <div class="art-icon">🎨</div>
+                <h2>Teste seu olhar artístico</h2>
+                <p>
+                    Em cada rodada, observe quatro pinturas.
+                    Apenas uma é uma obra original criada por um artista humano.
+                    Escolha a correta!
+                </p>
+                <div class="rules">
+                    <span>5 rodadas</span>
+                    <span>4 imagens por rodada</span>
+                    <span>1 ponto por acerto</span>
+                </div>
             </div>
 
-            <div class="home-art art-home-one"></div>
-            <div class="home-art art-home-two"></div>
-            <div class="home-art art-home-three"></div>
+            <button id="start-button" class="main-button">
+                COMEÇAR JOGO <span>→</span>
+            </button>
         </section>
 
         <!-- TELA DO JOGO -->
-        <section id="game-screen" class="screen game-screen" hidden>
-            <div class="game-heading">
+        <section id="game-screen" class="screen" hidden>
+            <header class="game-header">
                 <div>
-                    <div class="eyebrow"><span class="eyebrow-dot"></span> ENCONTRE A OBRA HUMANA</div>
-                    <h2>Qual delas é <span>real?</span></h2>
-                    <p>Observe os detalhes e escolha a pintura que acredita ter sido feita por uma pessoa.</p>
+                    <p class="eyebrow">REAL OR AI?</p>
+                    <h2 id="round-title">Rodada 1</h2>
                 </div>
-
-                <div class="score-panel">
-                    <span>PONTUAÇÃO</span>
+                <div class="score-box">
+                    <span>PONTOS</span>
                     <strong id="score">0</strong>
                 </div>
-            </div>
+            </header>
 
-            <div class="round-info">
-                <span id="round-label">RODADA 01</span>
-                <span>ESCOLHA UMA OBRA</span>
-            </div>
-
-            <div id="paintings-grid" class="paintings-grid">
-                <button class="painting-card" data-answer="A" aria-label="Escolher obra A">
-                    <span class="painting-number">A</span>
-                    <div class="artwork art-a"><span class="art-sun"></span><span class="art-mountain"></span><span class="art-hill"></span></div>
-                    <span class="choose-label">ESCOLHER ESTA OBRA <span>↗</span></span>
-                </button>
-
-                <button class="painting-card" data-answer="B" aria-label="Escolher obra B">
-                    <span class="painting-number">B</span>
-                    <div class="artwork art-b"><span class="art-window"></span><span class="art-figure"></span></div>
-                    <span class="choose-label">ESCOLHER ESTA OBRA <span>↗</span></span>
-                </button>
-
-                <button class="painting-card" data-answer="C" aria-label="Escolher obra C">
-                    <span class="painting-number">C</span>
-                    <div class="artwork art-c"><span class="art-flower"></span><span class="art-vase"></span></div>
-                    <span class="choose-label">ESCOLHER ESTA OBRA <span>↗</span></span>
-                </button>
-
-                <button class="painting-card" data-answer="D" aria-label="Escolher obra D">
-                    <span class="painting-number">D</span>
-                    <div class="artwork art-d"><span class="art-moon"></span><span class="art-city"></span></div>
-                    <span class="choose-label">ESCOLHER ESTA OBRA <span>↗</span></span>
-                </button>
-            </div>
-
-            <div id="result-panel" class="result-panel" hidden aria-live="polite">
-                <div>
-                    <span id="result-tag" class="result-tag">RESULTADO</span>
-                    <h3 id="result-title">Muito bem!</h3>
-                    <p id="result-description"></p>
+            <div class="progress-area">
+                <div class="progress-label">
+                    <span id="round-counter">RODADA 1 DE 5</span>
+                    <span id="round-theme">CLÁSSICA</span>
                 </div>
-                <button id="next-button" class="primary-button">PRÓXIMA RODADA <span>→</span></button>
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
             </div>
 
-            <div class="game-footer">
-                <span>CONFIE NOS SEUS OLHOS. QUESTIONE OS DETALHES.</span>
-                <button id="quit-button" class="text-button">VOLTAR AO INÍCIO</button>
+            <div class="question">
+                <h3>Qual destas pinturas foi feita por um humano?</h3>
+                <p>Observe os detalhes e escolha uma alternativa.</p>
             </div>
+
+            <div id="painting-grid" class="painting-grid"></div>
+
+            <div id="feedback" class="feedback" aria-live="polite" hidden></div>
+
+            <button id="next-button" class="main-button" hidden>
+                PRÓXIMA RODADA <span>→</span>
+            </button>
         </section>
 
         <!-- TELA FINAL -->
-        <section id="end-screen" class="screen end-screen" hidden>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> DESAFIO CONCLUÍDO</div>
-            <h2>Fim de jogo<span class="outlined">.</span></h2>
-            <p id="final-message">Você terminou todas as rodadas!</p>
-            <div class="final-score">
-                <span>SUA PONTUAÇÃO</span>
-                <strong id="final-score">0</strong>
-            </div>
-            <button id="restart-button" class="primary-button">JOGAR NOVAMENTE <span>↻</span></button>
-        </section>
-    </main>
+        <section id="result-screen" class="screen result-screen" hidden>
+            <p class="eyebrow">DESAFIO CONCLUÍDO</p>
+            <h1>FIM DE JOGO!</h1>
+            <p class="subtitle">Veja como você se saiu.</p>
 
-    <footer class="site-footer">
-        <span>REAL OR AI?</span>
-        <span>UM JOGO SOBRE ARTE E INTELIGÊNCIA ARTIFICIAL</span>
-    </footer>
+            <div class="final-score">
+                <strong id="final-score">0/5</strong>
+                <span>ACERTOS</span>
+            </div>
+
+            <h2 id="final-message">Muito bem!</h2>
+            <p id="final-description"></p>
+
+            <div class="result-details">
+                <div>
+                    <strong id="final-correct">0</strong>
+                    <span>Acertos</span>
+                </div>
+                <div>
+                    <strong id="final-wrong">0</strong>
+                    <span>Erros</span>
+                </div>
+                <div>
+                    <strong id="final-total">5</strong>
+                    <span>Rodadas</span>
+                </div>
+            </div>
+
+            <button id="restart-button" class="main-button">
+                JOGAR NOVAMENTE <span>↻</span>
+            </button>
+        </section>
+
+        <footer>
+            <span>REAL OR AI?</span>
+            <span>UM DESAFIO DE ARTE E TECNOLOGIA</span>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
